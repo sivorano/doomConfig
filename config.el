@@ -76,3 +76,8 @@
    (clojure . t)))
 ;(after! org
  ; (setq org-startup-indented nil))
+
+
+(map! :leader
+      :desc "Activate iEdit Mode"
+      "a e" #'iedit-mode)
