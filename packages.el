@@ -51,3 +51,4 @@
 
 (package! xah-math-input)
 (package! moe-theme)
+(package! color-identifiers-mode)
