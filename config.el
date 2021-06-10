@@ -83,3 +83,12 @@
 (map! :leader
       :desc "Activate iEdit Mode"
       "a e" #'iedit-mode)
+(map! :desc "test"
+      :n "æ" #'iedit-mode)
+
+(map! :desc "Avy goto word"
+      :n "ø" #'avy-goto-word-1)
+
+
+
+(add-hook 'after-init-hook 'global-color-identifiers-mode)
