@@ -57,6 +57,8 @@
 ;; they are implemented.
 
 
+(global-xah-math-input-mode)
+
 
 (menu-bar-mode)
 
