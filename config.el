@@ -54,7 +54,7 @@
 ;; they are implemented.
 
 
-
+(menu-bar-mode)
 
 
 (setq evil-normal-state-cursor '(box "red")
