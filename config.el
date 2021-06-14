@@ -57,12 +57,8 @@
 ;; they are implemented.
 
 
-<<<<<<< HEAD
-(menu-bar-mode)
-=======
 (global-xah-math-input-mode)
 
->>>>>>> 7ed0bcc2701fe9b99b00fd7724c6472c0ef3e616
 
 (menu-bar-mode)
 
