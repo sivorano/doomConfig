@@ -113,6 +113,8 @@
 (map! :desc "Avy goto word"
       :n "ø" #'avy-goto-word-1)
 
+(map! :mode elixir-mode
+      "<f5>" #'exunit-verify-all)
 
 
 ; parenthesis
