@@ -80,17 +80,81 @@
  ; (setq org-startup-indented nil))
 
 
+
+
+
+(defhydra my/navigator  (:color pink
+                    :hint nil
+                    :body-pre (when (not (use-region-p)) (push-mark)))
+  "Navigator"
+
+
+  ("æ" nil "cancel" :color blue)
+
+  ("e" #'backward-kill-word "delete word backward")
+  ("r" #'kill-word "delte word forward")
+  ("u" #'left-word "left-word")
+  ("o" #'right-word "wight-word")
+
+  ("j" #'left-char "left")
+  ("k" #'next-line "down")
+  ("i" #'previous-line "up")
+  ("l" #'right-char "right")
+
+  )
+
+
+
+
+
 (map! :leader
       :desc "Activate iEdit Mode"
       "a e" #'iedit-mode)
 (map! :desc "test"
-      :n "æ" #'iedit-mode)
+      :n "æ" #'my/navigator/body)
 
 (map! :desc "Avy goto word"
       :n "ø" #'avy-goto-word-1)
 
 (map! :mode elixir-mode
       "<f5>" #'exunit-verify-all)
+
+
+; parenthesis
+
+
+(map! :leader
+      :desc "Slurp forwards"
+      "a o" #'paredit-forward-slurp-sexp)
+
+(map! :leader
+      :desc "Slurp backwards"
+      "a u" #'paredit-backward-slurp-sexp)
+
+(map! :leader
+      :desc "Barf backwards"
+      "a e" #'paredit-backward-barf-sexp)
+
+(map! :leader
+      :desc "Barf forwards"
+      "a r" #'paredit-forward-barf-sexp)
+
+
+
+; rainbow
+
+
+
+; Caps to home
+;
+(if (file-exists-p "~/.Xmodmap")
+    (progn
+        (shell-command "xmodmap ~/.Xmodmap")
+        (map! "<home>" #'evil-normal-state)))
+
+
+
+
 
 
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
