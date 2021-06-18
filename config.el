@@ -87,21 +87,18 @@
                     :hint nil
                     :body-pre (when (not (use-region-p)) (push-mark)))
   "Navigator"
-
-
   ("æ" nil "cancel" :color blue)
 
   ("e" #'backward-kill-word "delete word backward")
   ("r" #'kill-word "delte word forward")
+
   ("u" #'left-word "left-word")
-  ("o" #'right-word "wight-word")
+  ("o" #'right-word "right-word")
 
   ("j" #'left-char "left")
   ("k" #'next-line "down")
   ("i" #'previous-line "up")
-  ("l" #'right-char "right")
-
-  )
+  ("l" #'right-char "right"))
 
 
 
