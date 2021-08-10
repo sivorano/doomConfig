@@ -104,9 +104,12 @@
 
 
 
-(map! :leader
-      :desc "Activate iEdit Mode"
-      "a e" #'iedit-mode)
+(map! :desc "Activate iEdit Mode"
+      "<f11>" #'iedit-mode)
+
+(map! :desc "Helm Occur"
+      "<f12>" #'helm-occur)
+
 (map! :desc "test"
       :n "æ" #'my/navigator/body)
 
@@ -115,6 +118,8 @@
 
 (map! :mode elixir-mode
       "<f5>" #'exunit-verify-all)
+
+
 
 
 ; parenthesis
