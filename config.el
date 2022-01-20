@@ -90,29 +90,29 @@
                     :hint nil
                     :body-pre (when (not (use-region-p)) (push-mark)))
   "Navigator"
-
-
   ("æ" nil "cancel" :color blue)
 
   ("e" #'backward-kill-word "delete word backward")
   ("r" #'kill-word "delte word forward")
+
   ("u" #'left-word "left-word")
-  ("o" #'right-word "wight-word")
+  ("o" #'right-word "right-word")
 
   ("j" #'left-char "left")
   ("k" #'next-line "down")
   ("i" #'previous-line "up")
-  ("l" #'right-char "right")
-
-  )
+  ("l" #'right-char "right"))
 
 
 
 
 
-(map! :leader
-      :desc "Activate iEdit Mode"
-      "a e" #'iedit-mode)
+(map! :desc "Activate iEdit Mode"
+      "<f11>" #'iedit-mode)
+
+(map! :desc "Helm Occur"
+      "<f12>" #'helm-occur)
+
 (map! :desc "test"
       :n "æ" #'my/navigator/body)
 
@@ -121,6 +121,8 @@
 
 (map! :mode elixir-mode
       "<f5>" #'exunit-verify-all)
+
+
 
 
 ; parenthesis
