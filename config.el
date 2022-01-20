@@ -57,6 +57,9 @@
 ;; they are implemented.
 
 
+(add-hook! elixir-mode
+           (rainbow-delimiters-mode))
+
 (global-xah-math-input-mode)
 
 
